@@ -26,6 +26,10 @@ class AttackId(str, Enum):
     PROMPT_INJECTION = "prompt-injection"
     ROLEPLAY = "roleplay"
     PROMPT_PROBING = "prompt-probing"
+    UNICODE_NORMALIZATION = "unicode-normalization"
+    HOMOGLYPH_FREE = "homoglyph-free"
+    MORSE_CODE = "morse-code"
+    CHAIN_OF_THOUGHT_MANIPULATION = "chain-of-thought-manipulation"
 
     # Premium single-turn attacks
     HEX = "hex"
@@ -99,6 +103,31 @@ FREE_SINGLE_TURN_ATTACKS = [
         category=AttackCategory.SINGLE_TURN,
         description="Attempts to extract system prompts through probing questions",
     ),
+    AttackDef(
+        id=AttackId.UNICODE_NORMALIZATION,
+        name="Unicode Normalization",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses Unicode normalization forms to bypass text filters",
+    ),
+    AttackDef(
+        id=AttackId.HOMOGLYPH_FREE,
+        name="Homoglyph (Free)",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses visually similar Unicode characters to bypass filters (free implementation)",
+        # Note: Premium 'homoglyph' attack uses more sophisticated Deckard service
+    ),
+    AttackDef(
+        id=AttackId.MORSE_CODE,
+        name="Morse Code",
+        category=AttackCategory.SINGLE_TURN,
+        description="Encodes input in Morse code to bypass text-based filters",
+    ),
+    AttackDef(
+        id=AttackId.CHAIN_OF_THOUGHT_MANIPULATION,
+        name="Chain-of-Thought Manipulation",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses logical reasoning framework to bypass safety filters",
+    ),
 ]
 
 # =============================================================================
@@ -125,7 +154,7 @@ PREMIUM_SINGLE_TURN_ATTACKS = [
         id=AttackId.HOMOGLYPH,
         name="Homoglyph Encoding",
         category=AttackCategory.SINGLE_TURN,
-        description="Uses visually similar Unicode characters to bypass text filters",
+        description="Uses visually similar Unicode characters to bypass text filters (premium implementation with advanced techniques)",
         premium=True,
     ),
     # Context/manipulation attacks (premium)
@@ -424,6 +453,10 @@ def get_basic_scan_attacks() -> List[str]:
         AttackId.PROMPT_INJECTION.value,
         AttackId.ROLEPLAY.value,
         AttackId.PROMPT_PROBING.value,
+        AttackId.UNICODE_NORMALIZATION.value,
+        AttackId.HOMOGLYPH_FREE.value,
+        AttackId.MORSE_CODE.value,
+        AttackId.CHAIN_OF_THOUGHT_MANIPULATION.value,
     ]
 
 

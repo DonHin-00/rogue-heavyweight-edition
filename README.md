@@ -1,4 +1,4 @@
-# Rogue — AI Agent Evaluator & Red Team Platform
+# Rogue — AI Agent Evaluator & Red Team Platform (Heavyweight Edition)
 
 ![](https://pixel.qualifire.ai/api/record/rogue)
 
@@ -13,9 +13,33 @@
 
 **Stress-test your AI agents before attackers do.**
 
-[Discord Community](https://discord.gg/EUfAt7ZDeK) · [Quick Start](#-quick-start) · [Documentation](./docs/)
+**🔥 NOW WITH HEAVYWEIGHT ADVERSARIAL CAPABILITIES 🔥**
+
+[Discord Community](https://discord.gg/EUfAt7ZDeK) · [Quick Start](#-quick-start) · [Documentation](./docs/) · [**Advanced Features →**](./docs/ADVANCED_CAPABILITIES.md)
 
 </div>
+
+---
+
+## 💪 Heavyweight Edition Features
+
+This enhanced edition includes powerful ML-boosted adversarial capabilities:
+
+### 🚀 Advanced Attack Techniques (4 New)
+- **Unicode Normalization Bypass** - Evade filters using Unicode decomposition
+- **Homoglyph Character Substitution** - Visual confusion with lookalike characters
+- **Morse Code Encoding** - Payload obfuscation through encoding
+- **Chain-of-Thought Manipulation** - Semantic attacks via reasoning frameworks
+
+### 🎯 ML-Powered Metrics (2 New)
+- **Adversarial Robustness Score (ARS)** - Multi-dimensional security evaluation
+- **ML Confidence Metric** - Multi-signal vulnerability detection confidence
+
+### 🧠 Intelligence & Analysis (2 New)
+- **Attack Pattern Correlation Engine** - Identify attack synergies and patterns
+- **Enhanced Report Generator** - Executive summaries, risk heatmaps, remediation guides
+
+[**→ See Advanced Capabilities Guide**](./docs/ADVANCED_CAPABILITIES.md)
 
 ---
 
@@ -187,11 +211,13 @@ uvx rogue-ai cli \
 
 ### Scan Types
 
-| Type       | Vulnerabilities | Attacks       | Time       |
-| ---------- | --------------- | ------------- | ---------- |
-| **Basic**  | 5 curated       | 6             | ~2-3 min   |
-| **Full**   | 75+             | 40+           | ~30-45 min |
-| **Custom** | User-selected   | User-selected | Varies     |
+| Type       | Vulnerabilities | Attacks       | Time       | Description |
+| ---------- | --------------- | ------------- | ---------- | ----------- |
+| **Basic**  | 5 curated       | **9 FREE**    | ~3-4 min   | **Enhanced with new attacks** |
+| **Full**   | 75+             | 40+           | ~30-45 min | All vulnerabilities and attacks |
+| **Custom** | User-selected   | User-selected | Varies     | Flexible configuration |
+
+**New in Heavyweight Edition:** Basic scan now includes 9 free attacks (was 5), adding Unicode normalization, homoglyphs, Morse code, and chain-of-thought manipulation.
 
 ### Compliance Frameworks
 
@@ -265,6 +291,10 @@ GOOGLE_API_KEY="..."
 | 🤖 Model Support         | OpenAI, Anthropic, Google (via LiteLLM)      |
 | 🛡️ CVSS Scoring          | Industry-standard risk assessment            |
 | 🔁 Reproducible          | Deterministic scans with random seeds        |
+| 💪 Advanced Attacks      | **9 FREE attacks** including Unicode, homoglyphs, Morse code |
+| 🎯 ML-Powered Metrics    | **Adversarial Robustness Score** and **confidence scoring** |
+| 🧠 Pattern Analysis      | **Correlation engine** for attack intelligence |
+| 📈 Enhanced Reporting    | **Executive summaries** and **risk heatmaps** |
 
 ---
 

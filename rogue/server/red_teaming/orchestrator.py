@@ -270,12 +270,15 @@ class RedTeamOrchestrator:
         from .attacks import (
             ROT13,
             Base64,
+            ChainOfThoughtManipulation,
             ContextPoisoning,
             GoalRedirection,
             GrayBox,
+            Homoglyph,
             InputBypass,
             Leetspeak,
             MathProblem,
+            MorseCode,
             Multilingual,
             PermissionEscalation,
             PromptInjection,
@@ -283,6 +286,7 @@ class RedTeamOrchestrator:
             Roleplay,
             SemanticManipulation,
             SystemOverride,
+            UnicodeNormalization,
         )
         from .attacks.multi_turn import SocialEngineeringPromptExtraction
 
@@ -303,6 +307,10 @@ class RedTeamOrchestrator:
             "system-override": SystemOverride,
             "semantic-manipulation": SemanticManipulation,
             "math-problem": MathProblem,
+            "unicode-normalization": UnicodeNormalization,
+            "homoglyph-free": Homoglyph,
+            "morse-code": MorseCode,
+            "chain-of-thought-manipulation": ChainOfThoughtManipulation,
             "social-engineering-prompt-extraction": SocialEngineeringPromptExtraction,
         }
 
