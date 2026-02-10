@@ -113,7 +113,8 @@ FREE_SINGLE_TURN_ATTACKS = [
         id=AttackId.HOMOGLYPH_FREE,
         name="Homoglyph (Free)",
         category=AttackCategory.SINGLE_TURN,
-        description="Uses visually similar Unicode characters to bypass filters",
+        description="Uses visually similar Unicode characters to bypass filters (free implementation)",
+        # Note: Premium 'homoglyph' attack uses more sophisticated Deckard service
     ),
     AttackDef(
         id=AttackId.MORSE_CODE,
@@ -153,7 +154,7 @@ PREMIUM_SINGLE_TURN_ATTACKS = [
         id=AttackId.HOMOGLYPH,
         name="Homoglyph Encoding",
         category=AttackCategory.SINGLE_TURN,
-        description="Uses visually similar Unicode characters to bypass text filters",
+        description="Uses visually similar Unicode characters to bypass text filters (premium implementation with advanced techniques)",
         premium=True,
     ),
     # Context/manipulation attacks (premium)
