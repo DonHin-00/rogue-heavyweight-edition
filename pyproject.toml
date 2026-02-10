@@ -1,7 +1,7 @@
 [project]
 name = "rogue-ai"
 dynamic = ["version"]
-description = "Rogue AI Agent Evaluator & Red Team Platform (Heavyweight Edition) - ML-boosted adversarial testing with 40+ attack techniques, CVSS scoring, and compliance frameworks"
+description = "Rogue AI Agent Evaluator & Red Team Platform (Heavyweight Edition) - ML-boosted adversarial testing with 39 attack techniques (all free!), CVSS scoring, and compliance frameworks"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

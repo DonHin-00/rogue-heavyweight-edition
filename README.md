@@ -7,7 +7,7 @@
 
 <a href="https://trendshift.io/repositories/15191" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15191" alt="qualifire-dev%2Frogue | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-![Tests](https://github.com/qualifire-dev/rogue/actions/workflows/test.yml/badge.svg?branch=main)
+![Tests](https://github.com/DonHin-00/rogue-heavyweight-edition/actions/workflows/test.yml/badge.svg?branch=main)
 
 <img src="./freddy-rogue.png" width="200"/>
 
@@ -300,10 +300,10 @@ GOOGLE_API_KEY="..."
 
 ## Documentation
 
-- **[Quick Reference](./docs/QUICK_REFERENCE.md)** — One-page cheat sheet
-- **[Red Team Workflow](./docs/RED_TEAM_WORKFLOW.md)** — Technical deep-dive
-- **[Implementation Status](./docs/IMPLEMENTATION_STATUS.md)** — Feature breakdown
-- **[Attack Mapping](./docs/ATTACK_VULNERABILITY_MAPPING.md)** — Vulnerability coverage
+- **[Advanced Capabilities Guide](./docs/ADVANCED_CAPABILITIES.md)** — ML-boosted features and new attack techniques
+- **[Agent Instructions](./AGENTS.md)** — Build, test, and development guidelines
+- **[Contributing Guide](./CONTRIBUTING.md)** — How to contribute to the project
+- **[Security Policy](./SECURITY.md)** — Security guidelines and reporting
 
 ---
 

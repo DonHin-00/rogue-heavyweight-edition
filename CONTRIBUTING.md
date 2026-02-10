@@ -201,7 +201,7 @@ uv run rogue-ai --example=tshirt_store
 
 5. **Open a pull request**
 
-   - Go to the [Rogue repository](https://github.com/qualifire-dev/rogue)
+   - Go to the [Rogue Heavyweight Edition repository](https://github.com/DonHin-00/rogue-heavyweight-edition)
    - Click "New Pull Request"
    - Select your feature branch
    - Fill out the PR template with:
@@ -302,7 +302,7 @@ uv run python -m rogue server --debug
 If you need help:
 
 - Check the [README.md](README.md) for basic usage
-- Look through existing [issues](https://github.com/qualifire-dev/rogue/issues)
+- Look through existing [issues](https://github.com/DonHin-00/rogue-heavyweight-edition/issues)
 - Open a new issue with the "question" label
 - Join discussions in pull requests
 
