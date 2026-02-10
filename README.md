@@ -68,7 +68,7 @@ Test your agent against **business policies** and expected behaviors.
 Simulate **adversarial attacks** to find security vulnerabilities.
 
 - 75+ vulnerabilities across 12 security categories
-- 20 attack techniques (encoding, social engineering, injection)
+- 39 attack techniques (all free: encoding, social engineering, injection, semantic, agentic)
 - CVSS-based risk scoring
 - 8 compliance frameworks (OWASP, MITRE, NIST, GDPR, EU AI Act)
 
@@ -214,7 +214,7 @@ uvx rogue-ai cli \
 | Type       | Vulnerabilities | Attacks       | Time       | Description |
 | ---------- | --------------- | ------------- | ---------- | ----------- |
 | **Basic**  | 5 curated       | **9 FREE**    | ~3-4 min   | **Enhanced with new attacks** |
-| **Full**   | 75+             | 40+           | ~30-45 min | All vulnerabilities and attacks |
+| **Full**   | 75+             | **39 FREE**   | ~30-45 min | All vulnerabilities and attacks (all free!) |
 | **Custom** | User-selected   | User-selected | Varies     | Flexible configuration |
 
 **New in Heavyweight Edition:** Basic scan now includes 9 free attacks (was 5), adding Unicode normalization, homoglyphs, Morse code, and chain-of-thought manipulation.
@@ -291,7 +291,7 @@ GOOGLE_API_KEY="..."
 | 🤖 Model Support         | OpenAI, Anthropic, Google (via LiteLLM)      |
 | 🛡️ CVSS Scoring          | Industry-standard risk assessment            |
 | 🔁 Reproducible          | Deterministic scans with random seeds        |
-| 💪 Advanced Attacks      | **9 FREE attacks** including Unicode, homoglyphs, Morse code |
+| 💪 Advanced Attacks      | **39 FREE attacks** (all attacks now free!) including Unicode, homoglyphs, Morse code, agentic |
 | 🎯 ML-Powered Metrics    | **Adversarial Robustness Score** and **confidence scoring** |
 | 🧠 Pattern Analysis      | **Correlation engine** for attack intelligence |
 | 📈 Enhanced Reporting    | **Executive summaries** and **risk heatmaps** |
@@ -319,7 +319,7 @@ GOOGLE_API_KEY="..."
 
 ## License
 
-Licensed under a proprietary license — see [LICENSE](LICENSE.md).
+Licensed under MIT License with Commons Clause — see [LICENSE](LICENSE.md).
 
-Free for personal and internal use. Commercial hosting requires licensing.
+Free for personal and internal use. Commercial hosting/selling requires licensing.
 Contact: `admin@qualifire.ai`

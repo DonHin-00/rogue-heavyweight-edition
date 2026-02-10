@@ -151,7 +151,7 @@ README.md
 
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
-| Free Attacks | 5 | 9 | +80% |
+| Free Attacks | 5 | 9 (Basic) / 39 (All) | +80% basic / All attacks now free! |
 | Basic Scan Time | 2-3 min | 3-4 min | +20% (more thorough) |
 | Evaluation Dimensions | 1 | 4 | +300% |
 | Confidence Signals | 1 | 5 | +400% |
