@@ -1,13 +1,17 @@
 from .base64 import Base64
 from .base_single_turn_attack import BaseSingleTurnAttack
+from .best_of_n import BestOfN
 from .chain_of_thought_manipulation import ChainOfThoughtManipulation
+from .citation import Citation
 from .context_poisoning import ContextPoisoning
+from .gcg import GCG
 from .goal_redirection import GoalRedirection
 from .gray_box import GrayBox
 from .hex import Hex
 from .homoglyph import Homoglyph
 from .input_bypass import InputBypass
 from .leetspeak import Leetspeak
+from .likert_jailbreak import LikertJailbreak
 from .math_problem import MathProblem
 from .morse_code import MorseCode
 from .multilingual import Multilingual
@@ -42,4 +46,8 @@ __all__ = [
     "Homoglyph",
     "MorseCode",
     "ChainOfThoughtManipulation",
+    "Citation",
+    "GCG",
+    "LikertJailbreak",
+    "BestOfN",
 ]
