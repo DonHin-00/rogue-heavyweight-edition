@@ -11,12 +11,15 @@ from .single_turn import (
     ROT13,
     Base64,
     BaseSingleTurnAttack,
+    ChainOfThoughtManipulation,
     ContextPoisoning,
     GoalRedirection,
     GrayBox,
+    Homoglyph,
     InputBypass,
     Leetspeak,
     MathProblem,
+    MorseCode,
     Multilingual,
     PermissionEscalation,
     PromptInjection,
@@ -24,6 +27,7 @@ from .single_turn import (
     Roleplay,
     SemanticManipulation,
     SystemOverride,
+    UnicodeNormalization,
 )
 
 __all__ = [
@@ -45,6 +49,10 @@ __all__ = [
     "PermissionEscalation",
     "SemanticManipulation",
     "SystemOverride",
+    "UnicodeNormalization",
+    "Homoglyph",
+    "MorseCode",
+    "ChainOfThoughtManipulation",
     # Multi Turn (Free)
     "SocialEngineeringPromptExtraction",
 ]
