@@ -12,8 +12,7 @@ This orchestrator follows the architecture where:
 The orchestrator is vulnerability-centric, not framework-centric.
 Frameworks are only used for report generation.
 
-Free attacks are executed locally. Premium attacks (multi-turn, agentic,
-premium single-turn) are routed to the Deckard service.
+All attacks are now executed locally. No attacks require the Deckard service.
 """
 
 import os
@@ -39,33 +38,12 @@ from .models import (
 from .risk_scoring import calculate_risk_score
 
 # Premium attacks that require the Deckard service
-PREMIUM_ATTACKS = {
-    # Single-turn premium
-    "homoglyph",
-    "citation",
-    "gcg",
-    "likert-jailbreak",
-    "best-of-n",
-    # Multi-turn
-    "goat",
-    "mischievous-user",
-    "simba",
-    "crescendo",
-    "linear-jailbreak",
-    "sequential-jailbreak",
-    "bad-likert-judge",
-    "multi-turn-jailbreak",
-    # Agentic
-    "hydra",
-    "tree-jailbreak",
-    "meta-agent-jailbreak",
-    "iterative-jailbreak",
-    "single-turn-composite",
-}
+# NOTE: All attacks are now free - this set is kept for backwards compatibility
+PREMIUM_ATTACKS = set()
 
 # Attacks that support multi-turn conversation
 MULTI_TURN_ATTACKS = {
-    # Premium multi-turn
+    # Multi-turn attacks
     "goat",
     "mischievous-user",
     "simba",
@@ -74,13 +52,12 @@ MULTI_TURN_ATTACKS = {
     "sequential-jailbreak",
     "bad-likert-judge",
     "multi-turn-jailbreak",
-    # Premium agentic
+    "social-engineering-prompt-extraction",
+    # Agentic attacks
     "hydra",
     "tree-jailbreak",
     "meta-agent-jailbreak",
     "iterative-jailbreak",
-    # Free multi-turn
-    "social-engineering-prompt-extraction",
 }
 
 
@@ -266,38 +243,66 @@ class RedTeamOrchestrator:
             return attacks
 
     def _load_attack_instances(self) -> Dict[str, Any]:
-        """Load attack class instances for FREE attacks only."""
+        """Load attack class instances for all attacks."""
         from .attacks import (
             ROT13,
+            BadLikertJudge,
             Base64,
+            BestOfN,
             ChainOfThoughtManipulation,
+            Citation,
             ContextPoisoning,
+            Crescendo,
+            GCG,
+            GOAT,
             GoalRedirection,
             GrayBox,
+            Hex,
             Homoglyph,
+            Hydra,
             InputBypass,
+            IterativeJailbreak,
             Leetspeak,
+            LikertJailbreak,
+            LinearJailbreak,
             MathProblem,
+            MetaAgentJailbreak,
+            MischievousUser,
             MorseCode,
+            MultiTurnJailbreak,
             Multilingual,
             PermissionEscalation,
             PromptInjection,
             PromptProbing,
             Roleplay,
             SemanticManipulation,
+            SequentialJailbreak,
+            Simba,
+            SingleTurnComposite,
+            SocialEngineeringPromptExtraction,
             SystemOverride,
+            TreeJailbreak,
             UnicodeNormalization,
         )
-        from .attacks.multi_turn import SocialEngineeringPromptExtraction
 
-        # Map attack IDs to their implementation classes (free attacks only)
+        # Map attack IDs to their implementation classes
         attack_classes = {
+            # Encoding attacks
             "base64": Base64,
             "rot13": ROT13,
+            "hex": Hex,
             "leetspeak": Leetspeak,
+            "unicode-normalization": UnicodeNormalization,
+            "homoglyph-free": Homoglyph,
+            "homoglyph": Homoglyph,  # Same implementation for now
+            "morse-code": MorseCode,
+            # Injection and manipulation attacks
             "prompt-injection": PromptInjection,
             "roleplay": Roleplay,
             "prompt-probing": PromptProbing,
+            "chain-of-thought-manipulation": ChainOfThoughtManipulation,
+            # Context/manipulation attacks
+            "math-problem": MathProblem,
             "gray-box": GrayBox,
             "multilingual": Multilingual,
             "context-poisoning": ContextPoisoning,
@@ -306,12 +311,27 @@ class RedTeamOrchestrator:
             "permission-escalation": PermissionEscalation,
             "system-override": SystemOverride,
             "semantic-manipulation": SemanticManipulation,
-            "math-problem": MathProblem,
-            "unicode-normalization": UnicodeNormalization,
-            "homoglyph-free": Homoglyph,
-            "morse-code": MorseCode,
-            "chain-of-thought-manipulation": ChainOfThoughtManipulation,
+            # Advanced single-turn attacks
+            "citation": Citation,
+            "gcg": GCG,
+            "likert-jailbreak": LikertJailbreak,
+            "best-of-n": BestOfN,
+            # Multi-turn attacks
             "social-engineering-prompt-extraction": SocialEngineeringPromptExtraction,
+            "multi-turn-jailbreak": MultiTurnJailbreak,
+            "goat": GOAT,
+            "mischievous-user": MischievousUser,
+            "simba": Simba,
+            "crescendo": Crescendo,
+            "linear-jailbreak": LinearJailbreak,
+            "sequential-jailbreak": SequentialJailbreak,
+            "bad-likert-judge": BadLikertJudge,
+            # Agentic attacks
+            "iterative-jailbreak": IterativeJailbreak,
+            "meta-agent-jailbreak": MetaAgentJailbreak,
+            "hydra": Hydra,
+            "tree-jailbreak": TreeJailbreak,
+            "single-turn-composite": SingleTurnComposite,
         }
 
         instances = {}
