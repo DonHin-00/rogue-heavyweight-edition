@@ -7,8 +7,8 @@ This tool allows you to evaluate AI agents against a set of predefined scenarios
 
 Clone the repo:
 ```bash
-git clone https://github.com/qualifire-dev/rogue.git
-cd rogue
+git clone https://github.com/DonHin-00/rogue-heavyweight-edition.git
+cd rogue-heavyweight-edition
 ```
 
 1. Run using uv:

@@ -1,6 +1,6 @@
-# Rogue Agent Evaluator Python SDK
+# Rogue AI Agent Evaluator & Red Team Platform - Python SDK (Heavyweight Edition)
 
-A comprehensive Python SDK for interacting with the Rogue Agent Evaluator API.
+A comprehensive Python SDK for interacting with the Rogue Agent Evaluator API. Includes support for ML-boosted adversarial testing with 39 attack techniques, compliance frameworks, and advanced metrics.
 
 ## Installation
 

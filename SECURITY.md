@@ -20,7 +20,7 @@ We appreciate your help in keeping Rogue secure. If you discover a security vuln
 
 Instead, please report security vulnerabilities by:
 
-1. **GitHub Security Advisories (Preferred)**: Use the [GitHub Security Advisory](https://github.com/qualifire-dev/rogue/security/advisories/new) feature to privately report the vulnerability.
+1. **GitHub Security Advisories (Preferred)**: Use the [GitHub Security Advisory](https://github.com/DonHin-00/rogue-heavyweight-edition/security/advisories/new) feature to privately report the vulnerability.
 
 2. **Direct Email**: If you prefer, you can email security details directly to the maintainers. Please include:
    - A clear description of the vulnerability

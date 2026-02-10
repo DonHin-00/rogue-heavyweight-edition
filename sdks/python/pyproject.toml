@@ -1,7 +1,7 @@
 [project]
 name = "rogue-ai-sdk"
 dynamic = ["version"]
-description = "Python SDK for Rogue Agent Evaluator"
+description = "Python SDK for Rogue AI Agent Evaluator & Red Team Platform (Heavyweight Edition)"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{ name = "Qualifire", email = "support@qualifire.com" }]
