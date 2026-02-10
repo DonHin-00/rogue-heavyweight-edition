@@ -12,8 +12,9 @@ This orchestrator follows the architecture where:
 The orchestrator is vulnerability-centric, not framework-centric.
 Frameworks are only used for report generation.
 
-Free attacks are executed locally. Premium attacks (multi-turn, agentic,
-premium single-turn) are routed to the Deckard service.
+Most attacks are executed locally. Only advanced premium attacks (citation, gcg,
+likert-jailbreak, best-of-n, complex multi-turn, and agentic attacks) require
+the Deckard service.
 """
 
 import os
