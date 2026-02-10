@@ -40,8 +40,8 @@ from .risk_scoring import calculate_risk_score
 
 # Premium attacks that require the Deckard service
 PREMIUM_ATTACKS = {
-    # Single-turn premium
-    "homoglyph",
+    # Single-turn premium (not yet implemented locally)
+    "homoglyph",  # Advanced version beyond homoglyph-free
     "citation",
     "gcg",
     "likert-jailbreak",
@@ -274,6 +274,7 @@ class RedTeamOrchestrator:
             ContextPoisoning,
             GoalRedirection,
             GrayBox,
+            Hex,
             Homoglyph,
             InputBypass,
             Leetspeak,
@@ -292,12 +293,21 @@ class RedTeamOrchestrator:
 
         # Map attack IDs to their implementation classes (free attacks only)
         attack_classes = {
+            # Encoding attacks
             "base64": Base64,
             "rot13": ROT13,
+            "hex": Hex,
             "leetspeak": Leetspeak,
+            "unicode-normalization": UnicodeNormalization,
+            "homoglyph-free": Homoglyph,
+            "morse-code": MorseCode,
+            # Injection and manipulation attacks
             "prompt-injection": PromptInjection,
             "roleplay": Roleplay,
             "prompt-probing": PromptProbing,
+            "chain-of-thought-manipulation": ChainOfThoughtManipulation,
+            # Context/manipulation attacks
+            "math-problem": MathProblem,
             "gray-box": GrayBox,
             "multilingual": Multilingual,
             "context-poisoning": ContextPoisoning,
@@ -306,11 +316,7 @@ class RedTeamOrchestrator:
             "permission-escalation": PermissionEscalation,
             "system-override": SystemOverride,
             "semantic-manipulation": SemanticManipulation,
-            "math-problem": MathProblem,
-            "unicode-normalization": UnicodeNormalization,
-            "homoglyph-free": Homoglyph,
-            "morse-code": MorseCode,
-            "chain-of-thought-manipulation": ChainOfThoughtManipulation,
+            # Multi-turn attacks
             "social-engineering-prompt-extraction": SocialEngineeringPromptExtraction,
         }
 

@@ -4,6 +4,7 @@ from .chain_of_thought_manipulation import ChainOfThoughtManipulation
 from .context_poisoning import ContextPoisoning
 from .goal_redirection import GoalRedirection
 from .gray_box import GrayBox
+from .hex import Hex
 from .homoglyph import Homoglyph
 from .input_bypass import InputBypass
 from .leetspeak import Leetspeak
@@ -24,6 +25,7 @@ __all__ = [
     "PromptInjection",
     "Base64",
     "ROT13",
+    "Hex",
     "Leetspeak",
     "Roleplay",
     "PromptProbing",

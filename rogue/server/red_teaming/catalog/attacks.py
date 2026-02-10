@@ -73,6 +73,7 @@ class AttackId(str, Enum):
 # =============================================================================
 
 FREE_SINGLE_TURN_ATTACKS = [
+    # Encoding-based attacks
     AttackDef(
         id=AttackId.BASE64,
         name="Base64 Encoding",
@@ -85,6 +86,37 @@ FREE_SINGLE_TURN_ATTACKS = [
         category=AttackCategory.SINGLE_TURN,
         description="Encodes the attack input using ROT13 cipher to bypass filters",
     ),
+    AttackDef(
+        id=AttackId.HEX,
+        name="Hex Encoding",
+        category=AttackCategory.SINGLE_TURN,
+        description="Encodes the attack input in hexadecimal to bypass filters",
+    ),
+    AttackDef(
+        id=AttackId.LEETSPEAK,
+        name="Leetspeak",
+        category=AttackCategory.SINGLE_TURN,
+        description="Transforms text using leetspeak (1337) character substitutions",
+    ),
+    AttackDef(
+        id=AttackId.UNICODE_NORMALIZATION,
+        name="Unicode Normalization",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses Unicode normalization forms to bypass text filters",
+    ),
+    AttackDef(
+        id=AttackId.HOMOGLYPH_FREE,
+        name="Homoglyph (Free)",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses visually similar Unicode characters to bypass filters",
+    ),
+    AttackDef(
+        id=AttackId.MORSE_CODE,
+        name="Morse Code",
+        category=AttackCategory.SINGLE_TURN,
+        description="Encodes input in Morse code to bypass text-based filters",
+    ),
+    # Injection and manipulation attacks
     AttackDef(
         id=AttackId.PROMPT_INJECTION,
         name="Prompt Injection",
@@ -104,29 +136,65 @@ FREE_SINGLE_TURN_ATTACKS = [
         description="Attempts to extract system prompts through probing questions",
     ),
     AttackDef(
-        id=AttackId.UNICODE_NORMALIZATION,
-        name="Unicode Normalization",
-        category=AttackCategory.SINGLE_TURN,
-        description="Uses Unicode normalization forms to bypass text filters",
-    ),
-    AttackDef(
-        id=AttackId.HOMOGLYPH_FREE,
-        name="Homoglyph (Free)",
-        category=AttackCategory.SINGLE_TURN,
-        description="Uses visually similar Unicode characters to bypass filters (free implementation)",
-        # Note: Premium 'homoglyph' attack uses more sophisticated Deckard service
-    ),
-    AttackDef(
-        id=AttackId.MORSE_CODE,
-        name="Morse Code",
-        category=AttackCategory.SINGLE_TURN,
-        description="Encodes input in Morse code to bypass text-based filters",
-    ),
-    AttackDef(
         id=AttackId.CHAIN_OF_THOUGHT_MANIPULATION,
         name="Chain-of-Thought Manipulation",
         category=AttackCategory.SINGLE_TURN,
         description="Uses logical reasoning framework to bypass safety filters",
+    ),
+    # Context/manipulation attacks
+    AttackDef(
+        id=AttackId.MATH_PROBLEM,
+        name="Math Prompt",
+        category=AttackCategory.SINGLE_TURN,
+        description="Encodes harmful requests in math to distract filters",
+    ),
+    AttackDef(
+        id=AttackId.GRAY_BOX,
+        name="Gray Box",
+        category=AttackCategory.SINGLE_TURN,
+        description="Injects fake internal info to gain trust or trick model",
+    ),
+    AttackDef(
+        id=AttackId.MULTILINGUAL,
+        name="Multilingual",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses translation framing to bypass language-specific filters",
+    ),
+    AttackDef(
+        id=AttackId.CONTEXT_POISONING,
+        name="Context Poisoning",
+        category=AttackCategory.SINGLE_TURN,
+        description="Injects malicious context or instructions to alter model behavior",
+    ),
+    AttackDef(
+        id=AttackId.GOAL_REDIRECTION,
+        name="Goal Redirection",
+        category=AttackCategory.SINGLE_TURN,
+        description="Attempts to shift the goal of the conversation mid-prompt",
+    ),
+    AttackDef(
+        id=AttackId.INPUT_BYPASS,
+        name="Input Bypass",
+        category=AttackCategory.SINGLE_TURN,
+        description="Splits payload or uses delimiters to bypass regex filters",
+    ),
+    AttackDef(
+        id=AttackId.PERMISSION_ESCALATION,
+        name="Permission Escalation",
+        category=AttackCategory.SINGLE_TURN,
+        description="Attempts to bypass permission checks by claiming elevated status",
+    ),
+    AttackDef(
+        id=AttackId.SYSTEM_OVERRIDE,
+        name="System Override",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses explicit system override commands to bypass restrictions",
+    ),
+    AttackDef(
+        id=AttackId.SEMANTIC_MANIPULATION,
+        name="Semantic Manipulation",
+        category=AttackCategory.SINGLE_TURN,
+        description="Uses semantic tricks and complex phrasing to disguise intent",
     ),
 ]
 
@@ -135,21 +203,7 @@ FREE_SINGLE_TURN_ATTACKS = [
 # =============================================================================
 
 PREMIUM_SINGLE_TURN_ATTACKS = [
-    # Encoding-based attacks (premium)
-    AttackDef(
-        id=AttackId.HEX,
-        name="Hex Encoding",
-        category=AttackCategory.SINGLE_TURN,
-        description="Encodes the attack input in hexadecimal to bypass filters",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.LEETSPEAK,
-        name="Leetspeak",
-        category=AttackCategory.SINGLE_TURN,
-        description="Transforms text using leetspeak (1337) character substitutions",
-        premium=True,
-    ),
+    # Premium encoding attacks (not yet implemented locally)
     AttackDef(
         id=AttackId.HOMOGLYPH,
         name="Homoglyph Encoding",
@@ -157,71 +211,7 @@ PREMIUM_SINGLE_TURN_ATTACKS = [
         description="Uses visually similar Unicode characters to bypass text filters (premium implementation with advanced techniques)",
         premium=True,
     ),
-    # Context/manipulation attacks (premium)
-    AttackDef(
-        id=AttackId.MATH_PROBLEM,
-        name="Math Prompt",
-        category=AttackCategory.SINGLE_TURN,
-        description="Encodes harmful requests in math to distract filters",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.GRAY_BOX,
-        name="Gray Box",
-        category=AttackCategory.SINGLE_TURN,
-        description="Injects fake internal info to gain trust or trick model",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.MULTILINGUAL,
-        name="Multilingual",
-        category=AttackCategory.SINGLE_TURN,
-        description="Uses translation framing to bypass language-specific filters",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.CONTEXT_POISONING,
-        name="Context Poisoning",
-        category=AttackCategory.SINGLE_TURN,
-        description="Injects malicious context or instructions to alter model behavior",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.GOAL_REDIRECTION,
-        name="Goal Redirection",
-        category=AttackCategory.SINGLE_TURN,
-        description="Attempts to shift the goal of the conversation mid-prompt",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.INPUT_BYPASS,
-        name="Input Bypass",
-        category=AttackCategory.SINGLE_TURN,
-        description="Splits payload or uses delimiters to bypass regex filters",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.PERMISSION_ESCALATION,
-        name="Permission Escalation",
-        category=AttackCategory.SINGLE_TURN,
-        description="Attempts to bypass permission checks by claiming elevated status",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.SYSTEM_OVERRIDE,
-        name="System Override",
-        category=AttackCategory.SINGLE_TURN,
-        description="Uses explicit system override commands to bypass restrictions",
-        premium=True,
-    ),
-    AttackDef(
-        id=AttackId.SEMANTIC_MANIPULATION,
-        name="Semantic Manipulation",
-        category=AttackCategory.SINGLE_TURN,
-        description="Uses semantic tricks and complex phrasing to disguise intent",
-        premium=True,
-    ),
-    # Advanced premium attacks
+    # Advanced premium attacks (require Deckard service)
     AttackDef(
         id=AttackId.CITATION,
         name="Citation",
@@ -260,14 +250,6 @@ SINGLE_TURN_ATTACKS = FREE_SINGLE_TURN_ATTACKS + PREMIUM_SINGLE_TURN_ATTACKS
 # =============================================================================
 
 FREE_MULTI_TURN_ATTACKS: List[AttackDef] = [
-    # No free multi-turn attacks currently
-]
-
-# =============================================================================
-# PREMIUM MULTI-TURN ATTACKS (Require Deckard service)
-# =============================================================================
-
-PREMIUM_MULTI_TURN_ATTACKS = [
     AttackDef(
         id=AttackId.SOCIAL_ENGINEERING_PROMPT_EXTRACTION,
         name="Social Engineering Prompt Extraction",
@@ -276,8 +258,14 @@ PREMIUM_MULTI_TURN_ATTACKS = [
             "Uses trust-building and social engineering to extract "
             "system prompts through multi-turn conversation"
         ),
-        premium=True,
     ),
+]
+
+# =============================================================================
+# PREMIUM MULTI-TURN ATTACKS (Require Deckard service)
+# =============================================================================
+
+PREMIUM_MULTI_TURN_ATTACKS = [
     AttackDef(
         id=AttackId.MULTI_TURN_JAILBREAK,
         name="Multi-turn Jailbreaks",
@@ -445,18 +433,34 @@ def get_basic_scan_attacks() -> List[str]:
     """
     Get attack IDs for basic (free) scan.
 
-    Returns a curated list of effective free single-turn attacks.
+    Returns all free attacks (both single-turn and multi-turn).
     """
     return [
+        # Encoding attacks
         AttackId.BASE64.value,
         AttackId.ROT13.value,
-        AttackId.PROMPT_INJECTION.value,
-        AttackId.ROLEPLAY.value,
-        AttackId.PROMPT_PROBING.value,
+        AttackId.HEX.value,
+        AttackId.LEETSPEAK.value,
         AttackId.UNICODE_NORMALIZATION.value,
         AttackId.HOMOGLYPH_FREE.value,
         AttackId.MORSE_CODE.value,
+        # Injection and manipulation attacks
+        AttackId.PROMPT_INJECTION.value,
+        AttackId.ROLEPLAY.value,
+        AttackId.PROMPT_PROBING.value,
         AttackId.CHAIN_OF_THOUGHT_MANIPULATION.value,
+        # Context/manipulation attacks
+        AttackId.MATH_PROBLEM.value,
+        AttackId.GRAY_BOX.value,
+        AttackId.MULTILINGUAL.value,
+        AttackId.CONTEXT_POISONING.value,
+        AttackId.GOAL_REDIRECTION.value,
+        AttackId.INPUT_BYPASS.value,
+        AttackId.PERMISSION_ESCALATION.value,
+        AttackId.SYSTEM_OVERRIDE.value,
+        AttackId.SEMANTIC_MANIPULATION.value,
+        # Multi-turn attacks
+        AttackId.SOCIAL_ENGINEERING_PROMPT_EXTRACTION.value,
     ]
 
 
